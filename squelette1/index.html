@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Overflow by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>#NOM_SITE_SPIP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="#CHEMIN{assets/css/main.css}" />
+			<link rel="stylesheet" href="#CHEMIN{https://www.w3schools.com/w3css/4/w3.css}" />
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>Geo-Quizz</h1>
+					<p>Jeu Et Découverte</p>
+				</header>
+				<footer>
+					<a href="#banner" class="button style2 scrolly-middle">Concept</a>
+					<a href="#equipe" class="button style2 scrolly-middle">Equipe</a>
+					<a href="#teaser" class="button style2 scrolly-middle">Teaser</a>
+					<a href="#contact" class="button style2 scrolly-middle">Contact</a>
+				</footer>
+				
+			</section>
+
+<!-- Banner -->
+			<BOUCLE_article1(ARTICLES){id_article=8 & 10}>
+
+			<section id="banner">
+				<header>
+					<h2>#TITRE</h2>
+				</header>
+				<p>	
+    
+		      <strong>#CHAPO</strong>
+		      <div align="justify">#TEXTE</div>
+
+		
+		      </p>
+       
+				
+		      </section>
+		      </BOUCLE_article1>
+	      
+<section  id="equipe" >
+				<header>
+				
+				</header>
+				<p>	<a href="#" class="image fit"><img src="#CHEMIN{images/pic01.jpg}" alt="" /></a>
+</p>
+			
+				
+			</section>
+			<br/>
+			
+			
+			
+			
+			<section id="banner">
+			<section id="teaser">
+				<header>
+					<h2>Teaser</h2>
+				</header>
+				<p>	
+    
+   
+				      <BOUCLE_Teaser(DOCUMENTS){id_article=10}{extension==mp4}>
+
+				      </BOUCLE_Teaser>
+
+				 </p>
+						
+	</section>		
+	</section>
+			
+		<!-- 
+			<BOUCLE_article(ARTICLES){id_article IN 1,2,3,4,5,6,7,8}>
+			<section id="article1">
+					<article id="first" class="container box style1 right">
+					<a href="#" class="image fit"><img src="#CHEMIN{images/pic01.png}" alt="" /></a>
+					<div class="inner">
+						<header>
+							<h2>#TITRE</h2>
+						</header>
+						<p>#TEXTE</p>
+					</div>	
+				</article>
+				<footer>
+					<a href="#article1" class="button style2 scrolly-middle">Suivant</a>
+				</footer>
+			</section>
+			</BOUCLE_article>
+
+
+		
+			
+		
+		
+		<!-- Contact -->
+			<article  id="contact" class="container box style3">
+				<header>
+					<h2>Contacter Nous</h2>
+					
+				</header>
+				<form method="post" action="#">
+					<div class="row 50%">
+						<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
+						<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
+						<div class="12u$">
+							<textarea name="message" placeholder="Message"></textarea>
+						</div>
+						<div class="12u$">
+							<ul class="actions">
+								<li><input type="submit" value="Evoie" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</article>
+
+		
+					</html>
