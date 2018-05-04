@@ -48,16 +48,16 @@ class Model_DbTable_Theme extends Zend_Db_Table_Abstract
         if($limit != 0)
         {
             $query->limit($limit, $from);
+			
         }
-
+	
         return $this->fetchAll($query)->toArray();
     }
-
     
     
 }
 
-
+?>
 
 <?php
 class Application_Model_DbTable_Theme extends Zend_Db_Table_Abstract
