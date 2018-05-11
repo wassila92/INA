@@ -1,21 +1,17 @@
 'use strict';
 
-var ajaxServer = "http://localhost/geo_quizz/public/solo/solo", uti; //je recupère le code json avec le lien
+var ajaxServer = "http://localhost/geo_quizz/public/solo/solo"; //je recupère le code json avec le lien
   
-function getUtiInfos(providerData){
-	var p = {'login':providerData.displayName,'flux':providerData.providerId};
-	$.get(ajaxServer+"/uti", p,
+function getMenuTheme(){
+	
+	$.get(ajaxServer,
 	 function(data){
 		if(data.error){
 			console.log("ERREUR : "+data.error.message);
 		}else{
-			uti = data['uti'];
 			updateListeObjet(data['nom']);
 		}
-	 }, "json")
-	  .fail(function(r) {
-		  console.log("Une erreur s'est produite :"+r);
-	  });				
+	 }, "json");
 }
 
 function updateListeObjet(objets){
@@ -34,4 +30,44 @@ function updateListeObjet(objets){
     	.on("click",getSource)
     if(objets.length)getSource(objets[0]);
     else $('#modalWait').modal('hide');
+}
+
+
+
+
+
+
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
 }
