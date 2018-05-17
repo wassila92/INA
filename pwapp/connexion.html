@@ -1,92 +1,31 @@
-
-<style>
-	
-	body{
-		padding:0px;
-		margin:0px;
-		background-color: #F8F8F8;
-		
-	}
-   #home
-    {
-			z-index: 4;
-			margin-left: auto;
-			margin-right: auto;
-			width:350px;
-			font-family: Arial ;
-			position: relative;		
-    }
-	
-	#back
-    {
-		z-index: 2;
-		position: absolute;
-		height:100%;
-		width:100%;
-		margin-left: auto;
-		margin-right: auto;
-		
-    }
-	#logo
-    {
-		margin-left: auto;
-		margin-right: auto;
-		width: 300px;
-		height: 300px;	
-    }
-	
-	.vertical-menu {
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%; /* Set a width if you like */
-	}
-
-	.vertical-menu a {
-		background-color: black; /* Grey background color */
-		color: white; /* Black text color */
-		display: block; /* Make the links appear below each other */
-		padding: 12px; /* Add some padding */
-		text-decoration: none; /* Remove underline from links */
-		margin-bottom:5px;
-		border-radius:20px;
-	}
-
-	.vertical-menu a:hover {
-		background-color: #ccc; /* Dark grey background on mouse-over */
-	}
-
-	.vertical-menu a.active {
-		background-color: #4CAF50; /* Add a green color to the "active/current" link */
-		color: white;
-	}
-	p
-	{
-		font-size: 14px;
-		margin-top:10%;;
-	}
-	
-	a:link {
-    text-decoration: none;
-	}
-}
-  
-</style>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="style2.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Geo-Quizz</title>
-
+    <link rel="stylesheet" href="loading.css">
 </head>
-<body>
+<body onload="myFunction()" style="margin:0;">
 
 
-
+<div style="display:none;" id="myDiv2" class="animate-bottom">
+  	<img src="image/back_ground.jpg" id="back" alt="back_ground">
+</div>
 		<div id="home">
-				<img src="image/logo.png" id="logo" alt="Mountain View">	
+			<img src="image/logo.png" id="logo" alt="Mountain View">	
+			<form class="w3-container">	
+				<div id="menu">
+				
+					
+				
+			</form>
+		</div>
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  
+	
+		<div id="home">
 			<form class="w3-container">	
 				<div id="menu">
 				
@@ -104,8 +43,23 @@
 			</form>
 		</div>
 		<p>Pas encore de compte chez nous ?<a href="inscription.html"> Inscrivez-vous.</a> </p>
+</div>
+
+<script>
+
+
+function myFunction() {
+
+    myVar = setTimeout(showPage, 500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+    document.getElementById("myDiv2").style.display = "block";
+}
+</script>
 
 </body>
-
-	
 </html>
+
