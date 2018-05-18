@@ -37,6 +37,9 @@
     }
    
     function showthematique(jsonObj) {
+	jsonObj.forEach(function(d){
+		myPara1.textContent = d.nom;
+	})    
       var thematique = jsonObj['themes'];
       for(var i = 0; i < thematique.length; i++) {
         var myArticle = document.createElement('article');
