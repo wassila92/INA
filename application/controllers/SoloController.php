@@ -14,7 +14,7 @@ class SoloController extends Zend_Controller_Action
 		
 			$dbD = new Model_DbTable_Theme();
 			$arr = $dbD->getAll();
-			$this->view->result = $arr;
+			$this->view->result = array('themes'=>$arr);
 			
 			
 		}
