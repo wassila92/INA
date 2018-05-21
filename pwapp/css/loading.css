@@ -1,0 +1,194 @@
+<style>
+
+body{
+	padding:0px;
+	margin:0px;
+}
+	
+#home{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:0px;
+	margin-top:-5%;
+	padding-bottom:0px;
+	padding-top:0px;
+	max-width:500px;
+	font-family: Arial ;
+	position: relative; 
+	z-index: 1; /* The z-index should be higher than Google Maps */		
+}
+	
+#back{
+	position: absolute;
+	height:100%;
+	width:100%;
+	padding:0px;
+}
+
+#logo{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-bottom:0px;
+	padding-top:0px;
+    }
+/****************************************************************************************************************/
+.vertical-menu {
+	margin-left: auto;
+	margin-right: auto;
+	font-size:auto;
+	text-align:true;
+	max-width: 200px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+	background-color: black; /* Grey background color */
+	color: white; /* Black text color */
+	display: block; /* Make the links appear below each other */
+	padding: 12px; /* Add some padding */
+	text-decoration: none; /* Remove underline from links */
+	margin-bottom:15px;
+	border-radius:15px;
+}
+
+.vertical-menu a:hover {
+	background-color: #FE5A00; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+	background-color: #4CAF50; /* Add a green color to the "active/current" link */
+	color: white;
+}
+	
+/****************************************************************************************************************/
+
+/* Center the loader */
+#loader {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: 50px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+  margin-bottom:0px;
+		margin-top:0px;
+		padding-bottom:0px;
+		padding-top:0px;
+
+}
+
+/****************************************************************************************************************/
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+		max-width:400px;
+
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #ccc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	max-width:100px;
+}
+
+input[type=submit]:hover {
+    background-color: #FE5A00;
+}
+
+div {
+    border-radius: 5px;
+	
+}
+
+/****************************************************************************************************************/
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+</style>

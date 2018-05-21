@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/loading.css">
+	 <script  language="JavaScript" type="text/javascript" src="../js/main.js"></script>
+</head>
+
+
+<body onload="myFunction()" style="margin:0;">
+		
+	<div id="home" >	
+		<img src="../image/logo.png" id="logo" alt="Mountain View">	
+		<div id="loader"></div>
+		
+		<div style="display:none;" id="myDiv" class="animate-bottom">
+				
+				<form class="w3-container"  action="inscription.php" method="post">
+					<p>E-mail</p>
+					<input type="text"  name="pseudo" required>
+					<p>Mot de passe</p>
+					<input type="text" name="mdp" required>
+					<input type="submit" value="S'inscrire">
+				</form>
+				<p>Vous avez déjà un compte ?<a href="connexion.html"> Connectez-vous.</a> </p>
+		</div>
+	</div>
+</body>
+</html>
+

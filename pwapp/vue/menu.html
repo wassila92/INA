@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Geo-Quizz</title>
+    <link rel="stylesheet" href="../css/maps.css">
+	 <link rel="stylesheet" href="../css/loading.css">
+   <script  language="JavaScript" type="text/javascript" src="../js/main.js"></script>
+    
+	 <style>
+		  /* Always set the map height explicitly to define the size of the div
+		   * element that contains the map. */
+		  #map {
+			height: 100%;
+			width:100%;
+			  margin-top: 0 0 0 10%;
+				z-index: 1; /* Set z-index to 0 as it will be on a layer below the contact form */
+		 position:absolute; 
+			  }
+			  /* Optional: Makes the sample page fill the window. */
+			  html, body {
+			  position:relative;
+			  margin:0;
+			  padding: 0;
+			   z-index: 0;
+			  }
+	 </style>
+ 
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+	<div id="map"></div> 
+	
+
+
+	<div id="home" >	
+		<img src="../image/logo.png" id="logo" alt="Mountain View">	
+		<div id="loader"></div>
+
+		<div style="display:none;" id="myDiv" class="animate-bottom">
+			
+				<div class="vertical-menu">
+					<a href="solo.html">Solo</a>
+					<a href="geo_quizz/application/views/scripts/index/solo.phtml">Multijoueur</a>
+					<a href="#">Parametre</a>
+					<a href="#">Inviter</a>
+				</div>	
+		</div>
+	
+	</div>
+
+	<script async defer
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADdO8XEcU-w7ZAndH4IwTUMYp5tUZz0gs&callback=initMap">
+	</script>
+		
+</body>
+
+</html>
+
