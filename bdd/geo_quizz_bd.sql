@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 30 Avril 2018 à 22:26
+-- Généré le :  Jeu 24 Mai 2018 à 22:25
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -128,6 +128,14 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   PRIMARY KEY (`idUtilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`idUtilisateur`, `pseudo`, `mdp`) VALUES
+(0, 'root', 'root'),
+(1, 'root', 'root');
+
 -- --------------------------------------------------------
 
 --
@@ -200,16 +208,16 @@ ALTER TABLE `video`
 -- Contraintes pour la table `video_has_question`
 --
 ALTER TABLE `video_has_question`
-  ADD CONSTRAINT `fk_Video_has_Question_Video1` FOREIGN KEY (`Video_idVideo`) REFERENCES `video` (`idVideo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Video_has_Question_Question1` FOREIGN KEY (`Question_idQuestion`) REFERENCES `question` (`idQuestion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Video_has_Question_reponse1` FOREIGN KEY (`reponse_idreponse`) REFERENCES `reponse` (`idreponse`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Video_has_Question_reponse1` FOREIGN KEY (`reponse_idreponse`) REFERENCES `reponse` (`idreponse`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Video_has_Question_Video1` FOREIGN KEY (`Video_idVideo`) REFERENCES `video` (`idVideo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `video_has_theme`
 --
 ALTER TABLE `video_has_theme`
-  ADD CONSTRAINT `fk_Video_has_Theme_Video1` FOREIGN KEY (`Video_idVideo`) REFERENCES `video` (`idVideo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Video_has_Theme_Theme1` FOREIGN KEY (`Theme_idTheme`) REFERENCES `theme` (`idTheme`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Video_has_Theme_Theme1` FOREIGN KEY (`Theme_idTheme`) REFERENCES `theme` (`idTheme`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Video_has_Theme_Video1` FOREIGN KEY (`Video_idVideo`) REFERENCES `video` (`idVideo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
