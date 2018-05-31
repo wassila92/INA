@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 24 Mai 2018 à 22:25
+-- Généré le :  Jeu 31 Mai 2018 à 13:57
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -35,6 +35,17 @@ CREATE TABLE IF NOT EXISTS `pins` (
   `type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPins`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `pins`
+--
+
+INSERT INTO `pins` (`idPins`, `nom`, `adresse`, `lat`, `lng`, `type`) VALUES
+(0, 'Tour Eiffel', 'Champ de Mars, 5 Avenue Anatole France, 75007', 48.8578499, 2.2924224999999296, 'monument'),
+(1, 'Tour Montparnasse', 'Avenue du Maine, Paris, France', 48.8421379, 2.321951399999989, 'GratteCiel'),
+(2, ' Stade de France', '93210 Saint-Denis, France', 48.9178378, 2.352228299999979, 'stade'),
+(3, 'Parc des Princes', '24 Rue du Commandant Guilbaud, 75016 Paris', 48.84146639999999, 2.252133599999979, 'stade'),
+(4, 'Arc de Triomphe', '1 Place Charles de Gaulle, 75008 Paris-8E-Arr', 48.87379386072242, 2.2950267791748047, 'monument');
 
 -- --------------------------------------------------------
 
@@ -145,10 +156,17 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `pseudo`, `mdp`) VALUES
 CREATE TABLE IF NOT EXISTS `video` (
   `idVideo` int(11) NOT NULL,
   `url` varchar(45) DEFAULT NULL,
-  `Pins_idPins` int(11) NOT NULL,
+  `idPins` int(11) NOT NULL,
   PRIMARY KEY (`idVideo`),
-  KEY `fk_Video_Pins_idx` (`Pins_idPins`)
+  KEY `fk_Video_Pins_idx` (`idPins`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `video`
+--
+
+INSERT INTO `video` (`idVideo`, `url`, `idPins`) VALUES
+(0, 'sport/Video1', 0);
 
 -- --------------------------------------------------------
 
@@ -182,6 +200,13 @@ CREATE TABLE IF NOT EXISTS `video_has_theme` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Contenu de la table `video_has_theme`
+--
+
+INSERT INTO `video_has_theme` (`Video_idVideo`, `Theme_idTheme`) VALUES
+(0, 1);
+
+--
 -- Contraintes pour les tables exportées
 --
 
@@ -202,7 +227,7 @@ ALTER TABLE `score`
 -- Contraintes pour la table `video`
 --
 ALTER TABLE `video`
-  ADD CONSTRAINT `fk_Video_Pins` FOREIGN KEY (`Pins_idPins`) REFERENCES `pins` (`idPins`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Video_Pins` FOREIGN KEY (`idPins`) REFERENCES `pins` (`idPins`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `video_has_question`
