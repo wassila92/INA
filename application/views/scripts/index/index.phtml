@@ -62,7 +62,12 @@
   
 </style>
 
-<?php echo $this->doctype() ?>
+<?php echo $this->doctype(); $bdd = new Zend_Db_Adapter_Pdo_Mysql(array(
+    'host'     => 'localhost',
+    'username' => 'root',
+    'password' => 'root',
+    'dbname'   => 'geo_quizz_bd'
+));?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -20,7 +20,6 @@ class IndexController extends Zend_Controller_Action
     
 	  public function connexionAction()
     {
-        // action body
     }
 	
 	  public function inscriptionAction()
